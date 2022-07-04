@@ -13,10 +13,15 @@ a{
 ul li{
     list-style-type: none;
 }
+@font-face {
+    font-family: "fonte";
+    src: url("https://lolstatic-a.akamaihd.net/accounts-fonts/FFMarkW05-Heavy.1de8fa6eb6e45628ebb3edd635462180.woff2");
+}
+
 body{
     background: #E9EBFF;
     height: 100vh;
-    font-family: 'Arial';
+    font-family: 'fonte';
 }
 .main{
     margin: 20px auto;
