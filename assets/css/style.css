@@ -16,6 +16,7 @@ ul li{
 body{
     background: #E9EBFF;
     height: 100vh;
+    font-family: 'Arial';
 }
 .main{
     margin: 20px auto;
