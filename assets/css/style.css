@@ -1,78 +1,185 @@
-*{
+:root{
+    --logo: 350px;
+    --fontemail: 20px;
+}
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-img{
+
+img {
     max-width: 100%;
     display: block;
 }
-a{
-    text-decoration: none;
-}
-ul li{
-    list-style-type: none;
-}
-@font-face {
-    font-family: "fonte";
-    src: url("https://lolstatic-a.akamaihd.net/accounts-fonts/FFMarkW05-Heavy.1de8fa6eb6e45628ebb3edd635462180.woff2");
+
+.img {
+    width: 50px;
+    height: 50px;
+    background-color: red;
 }
 
-body{
-    background: #E9EBFF;
+a {
+    text-decoration: none;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+@font-face {
+    font-family: "fonte";
+    src: url("../fonts/font.woff2"), url("https://lolstatic-a.akamaihd.net/accounts-fonts/FFMarkW05-Heavy.1de8fa6eb6e45628ebb3edd635462180.woff2");
+
+    /*src: url("https://lolstatic-a.akamaihd.net/accounts-fonts/FFMarkW05-Heavy.1de8fa6eb6e45628ebb3edd635462180.woff2");*/
+}
+
+body {
+    background: #181926;
+    color: white;
     height: 100vh;
     font-family: 'fonte';
 }
-.main{
-    margin: 20px auto;
-}
-.container{
+
+.container {
     max-width: 1440px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    flex-wrap: wrap;
+    height:90%;
 }
-.logo{
-    width: 150px;
-    padding: 2px;
+
+.logo {
+    width: var(--logo);
     border-radius: 100%;
-    border: 3px solid #A777F0;
-}
-.title{
-    color: #000000;
-    margin: 5px;
-}
-.username{
-   color: #726D6D;
-   font-family: monospace;
-   margin-bottom: 5px;
-   font-size: 16px;
-}
-.ul{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    flex-wrap: wrap;
-    margin: auto;
-    width: 100%;
     padding: 10px;
+    border: 2px solid #7EEDC7;
 }
-.ul .li{
-    min-width: 70%;
+
+.main {
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
 }
-.btn{
-    display: block;
-    margin: 10px;
-    padding: 15px 50px;
-    background: #5676D9;
-    color: white;
-    text-transform: uppercase;
+
+.title {
+    font-family: 'Arial';
     font-weight: bold;
+    font-size: 40px;
+    margin-top: 15px;
 }
-.btn:hover{
-    background: #284EC3;
-    transition: 0.2s linear;
+
+.email {
+    color: #61E5A3;
+    font-size: var(--fontemail);
+    margin: 10px auto;
 }
+
+.email:hover {
+    color: #0767C0;
+}
+
+.btn__visit {
+    border: 2px solid #0767C0;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 20px;
+    text-transform: capitalize;
+    color: white;
+    Margin: 20px auto 15px auto;
+}
+
+.btn__visit:hover {
+    border: 2px solid #61e5a3;
+}
+
+.projetos{
+    width: 100%;
+    padding: 5px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #42455A;
+    font-size: 34px;
+    margin-bottom: 15px;
+    font-family: 'Arial';
+    text-transform: capitalize;
+}
+.__card-grid__ {
+    /*display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;*/
+    display: inline-grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 300px;
+    padding: 5px;
+    grid-gap: 15px;
+}
+
+.__card-grid__ .__card-item__{
+    position: relative;
+}
+.__card-item__ .__card-image__{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.__card-item__ .__card-btn__{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: cornflowerblue;
+    padding: 10px 20px;
+    color: white;
+}
+.h__1 {
+    grid-row: span 1;
+    /*QUER DIZER QUE EU QUERO QUE PREENCHA 1 LINHA DO MEU GRID*/
+}
+
+.h__2 {
+    grid-row: span 2;
+    /* O MESMO DO DE CIMA SÓ QUE 2*/
+}
+
+.w__1 {
+    grid-column: span 1;
+    /*O MESMO QUE O ROW SÓ QUE COLUNAS*/
+}
+
+.w__2 {
+    grid-column: span 2;
+}
+.h__3{
+    grid-row: span 3;
+}
+.w__3{
+    grid-column: span 3;
+}
+@media(max-width: 700px) {
+    .__card-grid__ {
+        grid-template-columns: repeat(1, 1fr);
+        grid-auto-rows: 100vh;
+    }
+    .h__2{
+        grid-row: span 1;
+    }
+    .w__2{
+        grid-column: span 1;
+    }
+    .h__3{
+        grid-row: span 1;
+    }
+    .w__3{
+        grid-column: span 1;
+    }
+    .main{
+        margin: 30px auto 60px auto;
+    }
+    .__card-btn__{
+        width: 100%;
+        text-align: center;
+    }
+}
+
